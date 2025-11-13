@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sayangku ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animasi partikel hati */
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0;
+            animation: float 6s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1s ease-out;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #764ba2;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .message {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlide 0.5s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .modal-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .modal-content::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+        
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: #764ba2;
+        }
+
+        @keyframes modalSlide {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: #764ba2;
+            float: right;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #667eea;
+        }
+
+        .modal-title {
+            color: #764ba2;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .modal-message {
+            color: #444;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .song-lyrics {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            font-style: italic;
+            color: #667eea;
+            margin-top: 20px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .emoji {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+                margin: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .modal-content {
+                margin: 20% auto;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday! 🎉</h1>
+        <div class="subtitle">Untuk Orang Tersayang ❤️</div>
+        
+        <div class="message">
+            <p>Selamat ulang tahun, sayangku! 🎂</p>
+            <br>
+            <p>Di hari spesialmu ini, aku ingin mengucapkan terima kasih telah hadir di duniaku.</p>
+            <br>
+            <p>Semoga tahun ini membawa kebahagiaan, kesuksesan, dan semua hal baik untukmu. Dan yang terpenting, semoga kita bisa terus tumbuh bersama dengan lebih terbuka, lebih jujur, dan lebih dekat satu sama lain.</p>
+        </div>
+
+        <button class="btn" onclick="showModal()">Buka Pesan Spesial 💌</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="emoji">💝</div>
+            <h2 class="modal-title">Pesan dari Hati</h2>
+            <div class="modal-message">
+                <p>Aku tahu kadang kita berdua punya dinding masing-masing. Ada hal-hal yang sulit diungkapkan, perasaan yang terpendam, dan kata-kata yang tersangkut di tenggorokan.</p>
+                <br>
+                <p>Tapi hari ini, di ulang tahunmu, aku ingin kita berjanji untuk lebih terbuka. Mari kita belajar untuk saling berbagi, tidak hanya kebahagiaan, tapi juga ketakutan, keraguan, dan semua yang ada di dalam hati kita.</p>
+                <br>
+                <p><strong>Karena cinta yang sejati bukan tentang kesempurnaan, tapi tentang keberanian untuk menjadi diri sendiri yang sesungguhnya di hadapan seseorang.</strong></p>
+            </div>
+            
+            <div class="song-lyrics">
+                <p><em>"Speak your heart, say what you mean,<br>
+                Let your guard down, let yourself be seen,<br>
+                In vulnerability we find our strength,<br>
+                Together we can go to any length."</em></p>
+                <br>
+                <p style="text-align: right; color: #764ba2;">— Untuk kita, dengan cinta</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk membuat hati jatuh
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        // Buat hati setiap 500ms
+        setInterval(createHeart, 500);
+
+        // Modal functions
+        function showModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('myModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
